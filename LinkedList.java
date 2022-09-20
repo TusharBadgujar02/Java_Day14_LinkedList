@@ -2,6 +2,7 @@ package bridgelabz;
 
 public class LinkedList<T> {
 	 Node<T> head;
+
 	    /**
 	     * Method for Appending the specified element to the end of this list.
 	     *
@@ -48,8 +49,9 @@ public class LinkedList<T> {
 
 	    /**
 	     * Method for Inserting the data at specific index of the list.
+	     *
 	     * @param index : position at which to be inserted
-	     * @param data : data to be inserted
+	     * @param data  : data to be inserted
 	     */
 	    public void addAtIndex(int index, T data) {
 	        Node<T> newNode = new Node<>();
@@ -75,6 +77,19 @@ public class LinkedList<T> {
 	            Node<T> newHead = head.next;
 	            head = newHead;
 	        }
+	    }
+
+	    /**
+	     * Method for removing the last element from the list.
+	     */
+	    public void popLast() {
+	        Node<T> tail = head;
+	        Node<T> prevNode = head;
+	        while (tail.next != null) {
+	            prevNode = tail;
+	            tail = tail.next;
+	        }
+	        prevNode.next = null;
 	    }
 
 }
